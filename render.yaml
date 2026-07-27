@@ -1,0 +1,23 @@
+databases:
+  - name: golden-owl-db
+    databaseName: golden_owl
+    user: golden_owl
+    plan: free
+
+services:
+  - type: web
+    name: golden-owl-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: golden-owl-db
+          property: connectionString
+      - key: FRONTEND_URL
+        sync: false
