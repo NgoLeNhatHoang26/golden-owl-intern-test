@@ -28,7 +28,7 @@ services:
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/golden_owl
       PORT: 3000
-      SEED_ON_START: "true"
+      SEED_ON_START: "false"
     depends_on:
       postgres:
         condition: service_healthy

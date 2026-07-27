@@ -15,7 +15,11 @@ docker compose up -d --build
 | Frontend | http://localhost:5173 |
 | Backend  | http://localhost:3000 |
 
-Lần đầu chạy sẽ tự migrate và seed database (có thể mất vài phút).
+Lần đầu chạy, seed data thủ công (chỉ 1 lần):
+
+```bash
+docker compose exec backend npx prisma db seed
+```
 
 ## Lệnh hữu ích
 

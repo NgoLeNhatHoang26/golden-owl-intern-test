@@ -4,7 +4,7 @@ set -e
 echo "Running database migrations..."
 npx prisma migrate deploy
 
-if [ "${SEED_ON_START:-true}" = "true" ]; then
+if [ "${SEED_ON_START:-false}" = "true" ]; then
   echo "Seeding database..."
   npx prisma db seed
 else
@@ -12,4 +12,4 @@ else
 fi
 
 echo "Starting backend..."
-exec node --import tsx dist/main.js
+exec node --import tsx dist/src/main.js
