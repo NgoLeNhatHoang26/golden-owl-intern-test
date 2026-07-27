@@ -39,7 +39,7 @@ export default function SubjectLevelChart({
   const options: ApexOptions = {
     colors,
     chart: {
-      fontFamily: 'Outfit, sans-serif',
+      fontFamily: 'Rubik, sans-serif',
       type: 'bar',
       height: 420,
       stacked: true,
@@ -91,7 +91,7 @@ export default function SubjectLevelChart({
       show: true,
       position: 'top',
       horizontalAlign: 'left',
-      fontFamily: 'Outfit',
+      fontFamily: 'Rubik',
     },
     grid: {
       yaxis: {
