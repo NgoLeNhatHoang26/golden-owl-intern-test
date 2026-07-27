@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model Student {
+  id Int @id @default(autoincrement())
+  registrationNumber String @unique @map("sbd")
+
+  math Float? @map("toan")
+  literature Float? @map("ngu_van")
+  foreignLanguage Float? @map("ngoai_ngu")
+  physics Float? @map("vat_li")
+  chemistry Float? @map("hoa_hoc")
+  biology Float? @map("sinh_hoc")
+  history Float? @map("lich_su")
+  geography Float? @map("dia_li")
+  civicEducation Float? @map("gdcd")
+  foreignLanguageCode String? @map("ma_ngoai_ngu")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("students")
+}
