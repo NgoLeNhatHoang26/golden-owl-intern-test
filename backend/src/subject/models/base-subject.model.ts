@@ -33,7 +33,7 @@ export class BaseSubject implements ISubject {
            COUNT(*) FILTER (WHERE ${col} >= 8) AS ${prefix}_excellent,
            COUNT(*) FILTER (WHERE ${col} >= 6 AND ${col} < 8) AS ${prefix}_good,
            COUNT(*) FILTER (WHERE ${col} >= 4 AND ${col} < 6) AS ${prefix}_average,
-           COUNT(*) FILTER (WHERE ${col} < 4) AS ${prefix}_poor,
+           COUNT(*) FILTER (WHERE ${col} < 4) AS ${prefix}_poor
         `
     }
 }
